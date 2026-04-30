@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Claude Blocker 🙈",
+  "version": "1.0",
+  "description": "Replaces LinkedIn posts mentioning Claude with a random fun fact.",
+  "permissions": ["activeTab"],
+  "host_permissions": ["https://www.linkedin.com/*", "https://uselessfacts.jsph.pl/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.linkedin.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Claude Blocker"
+  }
+}
